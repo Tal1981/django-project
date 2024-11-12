@@ -19,6 +19,8 @@ from django.urls import path, include
 from hello_world import views as index_views
 
 urlpatterns = [
+    path('catalogue/', index_views.catalogue, name = 'catalogue'),
+    path('*/', index_views.notFound, name = 'notFound'),
     path('', index_views.index, name = 'index'),
     path('admin/', admin.site.urls),
 ]
